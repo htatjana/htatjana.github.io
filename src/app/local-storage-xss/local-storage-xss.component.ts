@@ -32,9 +32,6 @@ export class LocalStorageXssComponent implements OnInit {
     localStorage.setItem(this.mailLocalStorageKey, this.mail);
   }
 
-  byPassSecurity() {
-    this.usernameElement.nativeElement.innerHTML = this.sanitizer.bypassSecurityTrustHtml(this.username);
-  }
 
 
 }

@@ -46,5 +46,9 @@ export class C1BypassSecurityTrustComponent implements OnInit {
     this.trustedScript = this.sanitizer.bypassSecurityTrustScript(this.dangerousInput);
   }
 
+  // byPassSecurity() {
+  //   this.usernameElement.nativeElement.innerHTML = this.sanitizer.bypassSecurityTrustHtml(this.username);
+  // }
+
 
 }
