@@ -1,0 +1,37 @@
+Username: {{username}}
+<div class="center-content">
+  <img src="assets/wilfred-worrior-quadrat.png" class="avatar">
+  <br><br>
+</div>
+
+<div class="center-content">
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label><b>Username</b></mat-label>
+    <input matInput type="text" [(ngModel)]="dangerousInput">
+    <button *ngIf="dangerousInput" matSuffix mat-icon-button aria-label="Clear" (click)="dangerousInput=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <br>
+  <br>
+
+<!--  <mat-form-field class="example-form-field" appearance="fill">-->
+<!--    <mat-label><b>Mail</b></mat-label>-->
+<!--    <input matInput type="text" [(ngModel)]="mail">-->
+<!--    <button *ngIf="mail" matSuffix mat-icon-button aria-label="Clear" (click)="mail=''">-->
+<!--      <mat-icon>close</mat-icon>-->
+<!--    </button>-->
+<!--  </mat-form-field>-->
+
+  <button mat-button (click)="trustUrl()">Trust Url</button>
+  <button mat-button (click)="trustHtml()">Trust Html</button>
+  <button mat-button (click)="trustStyle()">Trust Style</button>
+  <button mat-button (click)="trustResourceUrl()">Trust ResourceUrl</button>
+  <button mat-button (click)="trustScript()">Trust Script</button>
+</div>
+
+
+<!--<div>-->
+<!--  <p><a [href]="trustedUrl">{{titel3}}</a></p>-->
+<!--  <p><a href="{{trustedUrl}}">{{titel4}} </a></p>-->
+<!--</div>-->

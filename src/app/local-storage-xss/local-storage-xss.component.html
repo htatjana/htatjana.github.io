@@ -1,0 +1,38 @@
+<p class="center-content" [innerHTML]="username">
+
+</p>
+
+Username: {{username}}
+<div class="center-content">
+  <img src="assets/wilfred-worrior-quadrat.png" class="avatar">
+  <br><br>
+</div>
+
+<div class="center-content">
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label><b>Username</b></mat-label>
+    <input matInput type="text" [(ngModel)]="username">
+    <button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <br>
+  <br>
+
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label><b>Mail</b></mat-label>
+    <input matInput type="text" [(ngModel)]="mail">
+    <button *ngIf="mail" matSuffix mat-icon-button aria-label="Clear" (click)="mail=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-button (click)="saveInLocalStorage()">Save</button>
+  <button mat-button (click)="byPassSecurity()">BYPASS</button>
+</div>
+
+
+<div>
+  <p><a [href]="trustedUrl">{{titel3}}</a></p>
+  <p><a href="{{trustedUrl}}">{{titel4}} </a></p>
+</div>

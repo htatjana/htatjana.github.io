@@ -1,0 +1,72 @@
+<!--<div>-->
+<!--  <mat-card class="example-card">-->
+<!--    <mat-card-header>-->
+<!--      <div mat-card-avatar class="example-header-image"></div>-->
+<!--      <mat-card-title>Contextual Escaping</mat-card-title>-->
+<!--      <mat-card-subtitle>Angular's Security Model for XSS</mat-card-subtitle>-->
+<!--    </mat-card-header>-->
+<!--    <img mat-card-image src="assets/cant-have-validation-problems.jpeg" alt="Photo of a Shiba Inu">-->
+<!--    <mat-card-content>-->
+<!--      <p>-->
+<!--        <mat-form-field class="example-form-field" appearance="fill">-->
+<!--          <mat-label><b>Name</b></mat-label>-->
+<!--          <input matInput type="text" [(ngModel)]="username">-->
+<!--          <button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">-->
+<!--            <mat-icon>close</mat-icon>-->
+<!--          </button>-->
+<!--        </mat-form-field>-->
+<!--      </p>-->
+
+<!--      <b>Taint sink:</b> {{username}}-->
+<!--    </mat-card-content>-->
+<!--    &lt;!&ndash;    <mat-card-actions>&ndash;&gt;-->
+<!--    &lt;!&ndash;      <button mat-button>PREV</button>&ndash;&gt;-->
+<!--    &lt;!&ndash;      <button mat-button>NEXT</button>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </mat-card-actions>&ndash;&gt;-->
+<!--  </mat-card>-->
+
+<!--</div>-->
+<br>
+<br>
+<br>
+<br>
+
+<div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Input Sanitization</mat-card-title>
+      <mat-card-subtitle>Angular's built-in security capabilities</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets/cant-have-validation-problems.jpeg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        <mat-form-field class="example-form-field" appearance="fill">
+          <mat-label><b>Taint source</b></mat-label>
+          <textarea matInput [cols]="12" type="text" [(ngModel)]="username"
+                    (ngModelChange)="setUsernameRef(username)"></textarea>
+          <button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </p>
+
+      <b> Taint sink:</b> {{username}}
+    </mat-card-content>
+    <!--    <mat-card-actions>-->
+    <!--      <button mat-button>PREV</button>-->
+    <!--      <button mat-button>NEXT</button>-->
+    <!--    </mat-card-actions>-->
+  </mat-card>
+
+
+  <b> {{titel1}}</b>
+  <div [innerHTML]="username"></div>
+
+  <b> {{titel2}}</b>
+  <div innerHTML="{{username}}"></div>
+
+  <b> {{titel3}}</b>
+  <div #usernameRef></div>
+
+</div>
