@@ -1,0 +1,17 @@
+.button-row {
+  display: table-cell;
+  width: 600px;
+}
+
+.button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+mat-form-field {
+  width: 350pt;
+}

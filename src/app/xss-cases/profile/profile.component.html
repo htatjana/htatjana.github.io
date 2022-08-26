@@ -1,0 +1,64 @@
+<p appHighlight>Highlight me!</p>
+
+
+
+
+<div class="center-content title" [innerHTML]="trustedHtml"></div>
+
+<!-- Fall 2-2: Schritt 4 - Rendering des Payloads mittels Data-Binding (src) -->
+<div>
+  <img [src]="trustedUrl" class="avatar vertical-center">
+</div>
+
+<div>
+  <mat-form-field>
+    <mat-label><strong>Image Url</strong></mat-label>
+
+    <!--Fall 2-2: Schritt 1 - Eingabe des Payloads -->
+    <input matInput type="text" [(ngModel)]="dangerousUrl" placeholder="Enter picture url">
+
+    <!--Fall 2-2: Schritt 2.1 - Aufruf der Funktion zur Speicherung des Payloads im LocalStorage mittels Button-Klick -->
+    <button mat-flat-button matSuffix *ngIf="dangerousUrl" (click)="saveImageUrl()">Save</button>
+    <button mat-flat-button matSuffix *ngIf="dangerousUrl" (click)="deleteImageUrl()">Reset</button>
+  </mat-form-field>
+</div>
+
+
+<!-- Fall 3: SVG, Script Execution, <svg onload="alert(1)" xmlns="http://www.w3.org/2000/svg"></svg> -->
+<!-- Fall 3: SVG, Open Redirect, <svg onload="window.location='http://www.google.com'" xmlns="http://www.w3.org/2000/svg"></svg> -->
+<div>
+  <mat-form-field>
+    <mat-label><strong>Username</strong></mat-label>
+    <input matInput type="text" [(ngModel)]="dangerousInput">
+    <button *ngIf="dangerousInput" matSuffix mat-icon-button aria-label="Clear" (click)="dangerousInput=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+
+<br>
+<br>
+<br>
+<div>
+  <div class="button-row">
+    <button mat-raised-button color="primary" (click)="trustUrl()">Trust Url</button>
+    <button mat-raised-button color="primary" (click)="trustHtml()">Trust Html</button>
+    <button mat-raised-button color="primary" (click)="trustStyle()">Trust Style</button>
+    <button mat-raised-button color="primary" (click)="trustResourceUrl()">Trust ResourceUrl</button>
+    <button mat-raised-button color="primary" (click)="trustScript()">Trust Script</button>
+  </div>
+</div>
+
+<!--{{getUsername() | async}}-->
+
+
+<!--<button mat-raised-button color="primary" (click)="eval()">Execute eval(username)</button>-->
+
+<!--&lt;!&ndash; Fall 4 &ndash;&gt;-->
+<!--<div>-->
+<!--  <b>Fall 4</b>-->
+<!--  <a [href]="trustedUrl">-->
+<!--    <button mat-raised-button color="primary">Open image in new window</button>-->
+<!--  </a>-->
+<!--</div>-->

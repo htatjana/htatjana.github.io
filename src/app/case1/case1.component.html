@@ -1,0 +1,159 @@
+<div class="center-content">
+  <h1>Find new friends</h1>
+</div>
+<div class="center-content">
+  <img src="assets/paw.png" width="80" height="80"><br>
+</div>
+
+<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="heart"></mat-icon>
+
+<mat-grid-list cols="2" rowHeight="700px">
+  <mat-grid-tile>
+    <div>
+      <a [routerLink]="'/cases/case-1'" [queryParams]="{username: 'Wilfred Warrior'}">
+        <button mat-raised-button color="{{username==='Wilfred Warrior' ? 'primary' : ''}}" class="long-btn">
+          <img src="assets/wilfred-worrior2-quadrat.png" class="avatar-sm">
+          <span>Wilfred Warrior</span>
+        </button>
+      </a>
+      <br><br>
+      <a [routerLink]="'/cases/case-1'" [queryParams]="{username: 'Grumpy Cat'}">
+        <button mat-raised-button color="{{username==='Grumpy Cat' ? 'primary' : ''}}" class="long-btn">
+          <img src="assets/grumpy.jpg" class="avatar-sm">
+          <span>Grumpy Cat</span>
+        </button>
+      </a>
+      <br><br>
+      <a [routerLink]="'/cases/case-1'" [queryParams]="{username: 'Hamilton Hipster Cat'}">
+        <button mat-raised-button color="{{username==='Hamilton Hipster Cat' ? 'primary' : ''}}" class="long-btn">
+          <img src="assets/hamilton.jpg" class="avatar-sm">
+          <span>Hamilton Hipster Cat</span>
+        </button>
+      </a>
+      <br><br>
+      <a [routerLink]="'/cases/case-1'" [queryParams]="{username: 'Lil Bub'}">
+        <button mat-raised-button color="{{username==='Lil Bub' ? 'primary' : ''}}" class="long-btn">
+          <img src="assets/lilbub.jpg" class="avatar-sm">
+          <span>Lil Bub</span>
+        </button>
+      </a>
+
+    </div>
+
+  </mat-grid-tile>
+  <mat-grid-tile style="border-left: 1px lightgray solid">
+
+    <div>
+      <div class="center-content">
+        <img src="{{profileData?.image}}" class="avatar">
+      </div>
+      <br>
+      <div class="center-content">
+        <button mat-raised-button color="primary">
+          <img src="assets/email.png">
+          Message Me!
+        </button>
+      </div>
+      <div class="center-content pt-20">
+        <h1>
+          {{username}}
+        </h1>
+      </div>
+      <p class="center-content">
+        {{profileData?.bio}}
+      </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--    <div style="padding-left: 30px">-->
+    <!--      <div class="center-content pt-20">-->
+    <!--        <h1>Fall 1: Reflected XSS</h1>-->
+    <!--      </div>-->
+    <!--      <div class="center-content pb-20">-->
+    <!--  <span>-->
+    <!--  Mittel des Query Parameters der URL wird der Wert für den Nutzernamen übergeben. Der Nutzername wird in einem div-Element ausgegeben.-->
+    <!--  Der Zugriff auf das HTML Element erfolgt über eine <a href="https://angular.io/api/core/ViewChildren">View Query</a> des Angular Frameworks - also mittels @ViewChild().-->
+    <!--  Das HTML Element wird hierbei in einem Objekt vom Typ "ElementRef" in dem Feld "nativeElement" gekapselt.-->
+    <!--  </span>-->
+    <!--      </div>-->
+
+
+    <!--      <mat-grid-list cols="5" rowHeight="20px">-->
+    <!--        <mat-grid-tile [colspan]="2" [rowspan]="1">-->
+    <!--          Quelle-->
+    <!--        </mat-grid-tile>-->
+    <!--        <mat-grid-tile [colspan]="1" [rowspan]="1">-->
+    <!--        </mat-grid-tile>-->
+    <!--        <mat-grid-tile [colspan]="2" [rowspan]="1">-->
+    <!--          Senke-->
+    <!--        </mat-grid-tile>-->
+    <!--      </mat-grid-list>-->
+
+    <!--      <mat-grid-list cols="5" rowHeight="20px">-->
+    <!--        <mat-grid-tile [colspan]="2" [rowspan]="1">-->
+    <!--          <strong>ActivatedRoute</strong>.queryParams-->
+    <!--        </mat-grid-tile>-->
+    <!--        <mat-grid-tile [colspan]="1" [rowspan]="1">-->
+    <!--          <img src="assets/right-arrow.png" width="80pt">-->
+    <!--        </mat-grid-tile>-->
+    <!--        <mat-grid-tile [colspan]="2" [rowspan]="1">-->
+    <!--          <strong>ElementRef</strong>.nativeElement.innerHTML-->
+    <!--        </mat-grid-tile>-->
+    <!--      </mat-grid-list>-->
+
+    <!--      <mat-divider></mat-divider>-->
+
+    <!--      <div class="center-content pt-50">-->
+    <!--        <p>Beweis:</p>-->
+    <!--      </div>-->
+    <!--      <div class="center-content">-->
+    <!--        <p>{{proof}}</p>-->
+    <!--      </div>-->
+
+
+    <!--      &lt;!&ndash;SECURE: here the payload gets sanitized&ndash;&gt;-->
+    <!--      &lt;!&ndash;<h1 [innerHTML]="username"></h1>&ndash;&gt;-->
+
+    <!--      &lt;!&ndash;SECURE: here the payload gets sanitized&ndash;&gt;-->
+    <!--      &lt;!&ndash;<h1 innerHTML="{{username}}"></h1>&ndash;&gt;-->
+
+
+    <!--    </div>-->
+
+  </mat-grid-tile>
+</mat-grid-list>
+
+<!--<mat-divider></mat-divider>-->
