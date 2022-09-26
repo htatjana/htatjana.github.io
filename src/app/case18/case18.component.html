@@ -1,3 +1,8 @@
-<img src="assets/wilfred-worrior2-quadrat.png" width="150" #image>
-<input #input [(ngModel)]="size">px
+<img [src]="src" width="150" #image>
+
+<p><a [href]="trustedUrl">Click me</a></p>
+
+
+<button #button></button>
+<input #input [(ngModel)]="size" value="a">px
 <button mat-raised-button (click)="changeSize()">Größe ändern</button>

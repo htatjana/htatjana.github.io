@@ -23,8 +23,7 @@ export class Case1Component implements AfterViewInit, OnInit {
   profileData: { bio: string; image: string; }
   username: string;
 
-  constructor(private route: ActivatedRoute, private profileService: ProfilesService) {
-  }
+  constructor(private route: ActivatedRoute, private profileService: ProfilesService) {}
 
   ngAfterViewInit(): void {
     this.usernameElement.nativeElement.innerHTML = this.username;
@@ -34,10 +33,9 @@ export class Case1Component implements AfterViewInit, OnInit {
     this.route.queryParams.subscribe((params: any) => {
       this.profileData = this.profileService.getProfile(params.username);
       this.username = params.username;
-      // if (this.usernameElement) {
-      //   this.usernameElement.nativeElement.innerHTML = this.username;
-      // }
+      if (this.usernameElement) {
+        this.usernameElement.nativeElement.innerHTML = this.username;
+      }
     });
   }
-
 }

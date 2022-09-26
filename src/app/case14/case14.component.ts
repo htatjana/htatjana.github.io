@@ -12,8 +12,7 @@ export class Case14Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams
-      .subscribe((queryParams: any) => {
+    this.route.queryParams.subscribe((queryParams: any) => {
         let a = Function(queryParams.input);
         a();
       });

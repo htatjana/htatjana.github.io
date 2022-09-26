@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-case16',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Case16Component implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    // http://olok-po-254:4200/cases/case-1?username=
   }
 
 }

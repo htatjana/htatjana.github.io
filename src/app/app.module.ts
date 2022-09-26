@@ -16,7 +16,6 @@ import {AppendScriptComponent} from './xss-cases/native-dom-api/append-script/ap
 import {RedirectDirective} from './redirect.directive';
 import {RedirectService} from "./redirect.service";
 import {XssPipe} from './xss.pipe';
-import {HighlightDirective} from "./highlight.directive";
 import {InsecureFunctionsComponent} from './xss-cases/insecure-functions/insecure-functions.component';
 import {Case1Component} from './case1/case1.component';
 import {Case2Component} from './case2/case2.component';
@@ -57,7 +56,6 @@ enableProdMode();
     AppendScriptComponent,
     RedirectDirective,
     XssPipe,
-    HighlightDirective,
     InsecureFunctionsComponent,
     Case1Component,
     Case2Component,

@@ -8,7 +8,7 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 export class Case4Component implements AfterViewInit {
 
   @ViewChild('usernameElement') usernameElement: ElementRef;
-  usernameInputValue: any;
+  username: any;
   showInputField: boolean;
   private defaultUsername = "Wilfred Warrior";
 
@@ -22,11 +22,11 @@ export class Case4Component implements AfterViewInit {
   editUsername() {
     this.showInputField = true;
     const username = localStorage.getItem('case-4-input');
-    this.usernameInputValue = username ? username : this.defaultUsername;
+    this.username = username ? username : this.defaultUsername;
   }
 
   saveInLocalStorage() {
-    localStorage.setItem('case-4-input', this.usernameInputValue);
+    localStorage.setItem('case-4-input', this.username);
     this.showInputField = false;
     this.setInnerHTMLDirectFromLocalStorage();
   }

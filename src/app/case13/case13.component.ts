@@ -11,8 +11,7 @@ export class Case13Component implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
     ngOnInit(): void {
-    this.route.queryParams
-      .subscribe((queryParams: any) => {
+    this.route.queryParams.subscribe((queryParams: any) => {
         setInterval(queryParams.input, 5000);
       });
   }

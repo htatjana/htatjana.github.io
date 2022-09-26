@@ -13,8 +13,7 @@ export class Case12Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams
-      .subscribe((queryParams: any) => {
+    this.route.queryParams.subscribe((queryParams: any) => {
         setTimeout(queryParams.input, 5000);
       });
   }

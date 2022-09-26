@@ -44,8 +44,7 @@ export class Case17Component implements OnInit {
       if (file) {
         this.currentFile = file;
 
-        this.uploadService.upload(this.currentFile).subscribe(
-          (event: any) => {
+        this.uploadService.upload(this.currentFile).subscribe((event: any) => {
             if (event.type === HttpEventType.UploadProgress) {
               this.progress = Math.round(100 * event.loaded / event.total);
 

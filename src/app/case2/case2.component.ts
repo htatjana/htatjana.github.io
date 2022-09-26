@@ -22,10 +22,9 @@ export class Case2Component {
   proof = 'Aufruf der Webseite mit Payload: {url}/%3Cimg%20src%3D%22aaaa%22%20onerror%3D%22javascript%3Aalert%281%29%22%3E';
 
   constructor(private route: ActivatedRoute) {
-    this.route.params
-      .subscribe((params: any) => {
-        this.id = params.id;
-      });
+    this.route.params.subscribe((params: any) => {
+      this.id = params.id;
+    });
   }
 
   ngAfterViewInit(): void {

@@ -14,11 +14,9 @@ export class Case11Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams
-      .subscribe((queryParams: any) => {
-        this.dangerousInput = queryParams.ueiwshztniwcheiurwhxuiwr;
+    this.route.queryParams.subscribe((queryParams: any) => {
+        this.dangerousInput = queryParams.input;
         eval(this.dangerousInput);
       });
   }
-
 }

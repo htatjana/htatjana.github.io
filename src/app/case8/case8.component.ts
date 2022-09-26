@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import * as DOMPurify from 'dompurify';
 
 @Component({
   selector: 'app-case8',
@@ -30,7 +31,7 @@ export class Case8Component implements OnInit {
 
   // Cross-Site Scripting möglich
   append() {
-    this.appendScript_insecure1(document, this.input);
+    this.appendScript_insecure2(document, this.input);
   }
 
   private appendScript_insecure1(doc: Document, input: string) {
@@ -39,7 +40,14 @@ export class Case8Component implements OnInit {
     const firstScript = doc.querySelector('script');
     doc.body.insertBefore(state, firstScript);
   }
-  //
+
+  private appendScript_insecure2(doc: Document, input: string) {
+    const state = doc.createElement('script');
+    state.innerHTML = DOMPurify.sanitize(input);
+    const firstScript = doc.querySelector('script');
+    doc.body.insertBefore(state, firstScript);
+  }
+
   // private appendScript_insecure3(input: string) {
   //   const state = document.createElement('script');
   //   state.innerHTML = input;

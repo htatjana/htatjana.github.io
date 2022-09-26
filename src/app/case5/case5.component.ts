@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-case5',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Case5Component implements OnInit {
 
-  constructor() { }
+  input = '';
+  safeInput: SafeHtml;
+
+  constructor(private sanitizer: DomSanitizer) {
+  }
 
   ngOnInit(): void {
   }
 
-
+  setSafe() {
+    this.safeInput = this.sanitizer.bypassSecurityTrustHtml(this.input);
+  }
 }

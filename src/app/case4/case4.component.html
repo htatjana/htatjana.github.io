@@ -17,7 +17,7 @@
   <form *ngIf="showInputField" class="center-content pt-20">
     <mat-form-field>
       <mat-label><strong>Username</strong></mat-label>
-      <input matInput type="text" [(ngModel)]="usernameInputValue" placeholder="Username">
+      <input matInput type="text" [(ngModel)]="username"  *ngIf="showInputField" placeholder="Username">
     </mat-form-field>
 
     <button mat-button (click)="saveInLocalStorage()">Speichern</button>

@@ -22,23 +22,15 @@ export class Case6Component implements OnInit {
     }
   }
 
-
   saveImageUrl() {
     localStorage.setItem(PICTURE_LOCALSTORAGE_KEY, this.dangerousUrl);
     this.editing = false;
   }
 
-
   navigate() {
     let input = localStorage.getItem(PICTURE_LOCALSTORAGE_KEY);
     if (input) {
-      this.alert3(input);
+      window.location.href = input;
     }
   }
-
-  alert3(input: string) {
-    window.location.href = input;
-  }
-
-
 }
